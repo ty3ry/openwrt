@@ -214,6 +214,15 @@ define Device/mediatek_mt7628an-eval-board
 endef
 TARGET_DEVICES += mediatek_mt7628an-eval-board
 
+define Device/linkplay_a31
+  IMAGE_SIZE := 16064k
+  DEVICE_VENDOR := Linkplay
+  DEVICE_MODEL := Wifi speaker solution board
+  DEVICE_PACKAGES:= kmod-usb2 kmod-usb-ohci uboot-envtools kmod-sdhci-mt7620
+  SUPPORTED_DEVICES += linkits7688 linkits7688d
+endef
+TARGET_DEVICES += linkplay_a31
+
 define Device/mercury_mac1200r-v2
   IMAGE_SIZE := 7936k
   DEVICE_VENDOR := Mercury
