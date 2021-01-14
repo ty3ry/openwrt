@@ -19,6 +19,10 @@
 		bootargs = "console=ttyS0,57600";
 	};
 
+	aliases {
+		serial0 = &uart2;
+	};
+
 	memory@0 {
 		device_type = "memory";
 		reg = <0x0 0x4000000>;
@@ -36,8 +40,14 @@
 			label = "skw92a:green:wlan";
 			gpios = <&gpio1 12 GPIO_ACTIVE_LOW>;
 		};
+
+		test {
+			label = "skw92a:red:test";
+			gpios = <&gpio1 13 GPIO_ACTIVE_LOW>;
+		};
 	};
 
+/*
 	keys {
 		compatible = "gpio-keys-polled";
 		poll-interval = <20>;
@@ -48,6 +58,7 @@
 			linux,code = <KEY_RESTART>;
 		};
 	};
+*/
 };
 
 &pinctrl {
@@ -109,6 +120,10 @@
 };
 
 &uart1 {
+	status = "okay";
+};
+
+&uart2 {
 	status = "okay";
 };
 
